@@ -1,0 +1,24 @@
+{
+  "name": "nuclear-plugin-spotify-playlist-import",
+  "version": "0.1.0",
+  "description": "Import Spotify playlists by URL into Nuclear (fetchPlaylistByUrl provider, anonymous public API)",
+  "author": "Pascal Hofer",
+  "license": "AGPL-3.0-only",
+  "main": "src/index.ts",
+  "type": "module",
+  "nuclear": {
+    "displayName": "Spotify Playlist Import",
+    "category": "playlists",
+    "categories": ["playlists"],
+    "icon": {
+      "type": "link",
+      "link": "https://www.scdn.co/i/_global/favicon_32x32.3ec675de.png"
+    },
+    "permissions": ["http"]
+  },
+  "keywords": ["nuclear", "plugin", "spotify", "playlists", "import"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pascal/nuclear-plugin-spotify-playlist-import"
+  }
+}

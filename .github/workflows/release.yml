@@ -1,0 +1,27 @@
+name: Release plugin.zip
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip plugin
+        run: |
+          mkdir -p /tmp/out
+          zip -r /tmp/out/plugin.zip package.json README.md src/
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: /tmp/out/plugin.zip
+          tag_name: ${{ github.ref_name }}
+          name: "Spotify Playlist Import ${{ github.ref_name }}"
+          body: "Import Spotify playlists by URL into Nuclear."
